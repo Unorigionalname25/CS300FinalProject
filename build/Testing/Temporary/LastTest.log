@@ -1,0 +1,39 @@
+Start testing: Dec 01 07:09 UTC
+----------------------------------------------------------
+1/1 Testing: testing
+1/1 Test: testing
+Command: "/workspaces/CS300FinalProject/build/testing"
+Directory: /workspaces/CS300FinalProject/build
+"testing" start time: Dec 01 07:09 UTC
+Output:
+----------------------------------------------------------
+[==========] Running 5 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from FlashcardTest
+[ RUN      ] FlashcardTest.CorrectAnswer
+[       OK ] FlashcardTest.CorrectAnswer (0 ms)
+[ RUN      ] FlashcardTest.IsFreeResponse
+[       OK ] FlashcardTest.IsFreeResponse (0 ms)
+[ RUN      ] FlashcardTest.IsMultipleChoice
+[       OK ] FlashcardTest.IsMultipleChoice (0 ms)
+[----------] 3 tests from FlashcardTest (0 ms total)
+
+[----------] 2 tests from FlashcardSetTest
+[ RUN      ] FlashcardSetTest.AddCard
+[       OK ] FlashcardSetTest.AddCard (0 ms)
+[ RUN      ] FlashcardSetTest.GetFlashcards
+[       OK ] FlashcardSetTest.GetFlashcards (0 ms)
+[----------] 2 tests from FlashcardSetTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 5 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"testing" end time: Dec 01 07:09 UTC
+"testing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 01 07:09 UTC
