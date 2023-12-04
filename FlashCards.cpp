@@ -40,21 +40,7 @@ bool isbool(std::string inp){
     return false;
 }
 
-void FlashcardSet::readFile(std::string path){
-    std::vector<Flashcard> card;
-    std::fstream myfile;
-    myfile.open(path);
-    std::string str;
-    std::string temp[6];
-    int i = 0;
-    while(std::getline(myfile, str, ',')){
-        temp[i] = str;
-        if(i == 5){
-            card.push_back(Flashcard(temp[0],temp[1],isbool(temp[2]),isbool(temp[3]),isbool(temp[4]),isbool(temp[5])));
-        }
-    }
-    flashcards = card;
-}
+
 
 void FlashcardSet::saveFile(std::string path, std::vector<Flashcard>& cards){
     std::ofstream ofs(path, std::ofstream::trunc);

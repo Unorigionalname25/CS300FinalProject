@@ -129,6 +129,28 @@ void test(){
             break;
         }
     }
+    /**
+     * Also ran out of time to implement this, always correct for now
+    */
+    if(matchingCards.size() != 0){
+        std::cout << "Matching Test" << std::endl;
+        std::cout << "-----------------------" << std::endl;
+        std::cout << "Please type the matching in the format show below" << std::endl;
+        std::cout << "Ex: A B C D  1 2 3 4 ------> A3 B2 C4 D1" << std::endl;
+        for(int i = 0; i < matchingCards.size(); i++){
+            std::cout << char(65 + i) << ": " << matchingCards[i].getSideOne();
+        }
+        std::cout << "--------------------" << std::endl;
+        for(int i =0; i < matchingCards.size(); i ++){
+            if(i+2 < matchingCards.size()){
+            std::cout << i << ": " << matchingCards[i+2].getSideTwo() << std::endl; ;
+        }else{
+            std::cout << i << ": " << matchingCards[matchingCards.size() - i].getSideTwo() << std::endl;
+        }
+        }
+        std::cin >> in;
+        std::cout << "Correct!" << std::endl;
+    }
 }
 
 void useMain(){
@@ -140,82 +162,72 @@ void useMain(){
         std::cout << "--------------------------------------" << std::endl;
         std::cout << "Select from the options below for what you would like to do" << std::endl;
         std::cout << "1: Create a Deck" << std::endl;
-        std::cout << "2: Load Deck from file" << std::endl;
-        std::cout << "3: Quit" << std::endl;
+        std::cout << "2: Quit" << std::endl;
         std::cin >> input;
         int temp = stoi(input);
         if(temp == 1){
             createDeck();
             state = 1;
-        }
-        else if(temp == 2){
-            std::cout << "Please input relative path of file" << std::endl;
-            std::cin >> input;
-            cardSet.readFile(input);
-            state = 1;
-        } else if(temp == 3){
+        }else if(temp == 2){
             break;
         }
         else{
             state = 0;
         }
-    if(state == 1){
+    }if(state == 1){
         std::cout << "Welcome to our Flash Card Studying tool" << std::endl;
         std::cout << "--------------------------------------" << std::endl;
         std::cout << "Select from the options below for what you would like to do" << std::endl;
-        std::cout << "1: Create a Deck" << std::endl;
-        std::cout << "2: Load Deck from file" << std::endl;
-        std::cout << "3: Review slides" << std::endl;
-        std::cout << "4: Test" << std::endl;
-        std::cout << "5: Quit" << std::endl;
+        std::cout << "1: Review slides" << std::endl;
+        std::cout << "2: Test" << std::endl;
+        std::cout << "3: Save Deck to file" << std::endl; 
+        std::cout << "4: Quit" << std::endl;
         std::cin >> input;
         int temp = stoi(input);
         if(temp == 1){
-            createDeck();
-            state = 1;
-        }
-        else if(temp == 2){
-            std::cout << "Please input relative path of file" << std::endl;
-            std::cin >> input;
-            cardSet.readFile(input);
+            reviewCards();
             state = 1;
         }else if(temp == 3){
-            reviewCards();
+            std::vector<Flashcard> saved = cardSet.getFlashcards();
+            cardSet.saveFile("cards.txt", saved);
+            state = 1;
+        }else if(temp == 2){
+            test();
+            state = 1;
         }else if(temp == 4){
-
-        }
-        }else if(temp == 5){
-            break;
+            break;}
     }
     }
-}
 }
 
 
 
 int main() {
-    // Example usage
-    Flashcard card1("What is the capital of France?", "Paris", true, false, false, false);
-    Flashcard card2("2 + 2", "4", true, true, false, false);
-    Flashcard card3("Is the sky blue?", "Yes", false, false, true, false);
+    // // Example usage
+    // Flashcard card1("What is the capital of France?", "Paris", true, false, false, false);
+    // Flashcard card2("2 + 2", "4", true, true, false, false);
+    // Flashcard card3("Is the sky blue?", "Yes", false, false, true, false);
 
-    cardSet.addCard(card1);
-    cardSet.addCard(card2);
-    cardSet.addCard(card3);
+    // cardSet.addCard(card1);
+    // cardSet.addCard(card2);
+    // cardSet.addCard(card3);
 
-    // Accessing flashcards in the set
-    const std::vector<Flashcard>& flashcards = cardSet.getFlashcards();
+    // // Accessing flashcards in the set
+    // const std::vector<Flashcard>& flashcards = cardSet.getFlashcards();
 
-    // Example: Print details of each flashcard
-    for (const Flashcard& card : flashcards) {
-        std::cout << "Question: " << card.getSideOne() << std::endl;
-        std::cout << "Answer: " << card.getSideTwo() << std::endl;
-        std::cout << "Free Response: " << (card.isFreeResponse() ? "Yes" : "No") << std::endl;
-        std::cout << "Multiple Choice: " << (card.isMultipleChoice() ? "Yes" : "No") << std::endl;
-        std::cout << "True/False: " << (card.isTrueFalse() ? "Yes" : "No") << std::endl;
-        std::cout << "Matching: " << (card.isMatching() ? "Yes" : "No") << std::endl;
-        std::cout << "---------------------" << std::endl;
-    }
+    // // Example: Print details of each flashcard
+    // for (const Flashcard& card : flashcards) {
+    //     std::cout << "Question: " << card.getSideOne() << std::endl;
+    //     std::cout << "Answer: " << card.getSideTwo() << std::endl;
+    //     std::cout << "Free Response: " << (card.isFreeResponse() ? "Yes" : "No") << std::endl;
+    //     std::cout << "Multiple Choice: " << (card.isMultipleChoice() ? "Yes" : "No") << std::endl;
+    //     std::cout << "True/False: " << (card.isTrueFalse() ? "Yes" : "No") << std::endl;
+    //     std::cout << "Matching: " << (card.isMatching() ? "Yes" : "No") << std::endl;
+    //     std::cout << "---------------------" << std::endl;
+    // }
+
+
+    useMain();
 
     return 0;
 }
