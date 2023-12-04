@@ -34,6 +34,13 @@ public:
     // Retrieve the vector of flashcards
     const std::vector<Flashcard>& getFlashcards() const;
 
+
+    //Function to handle reading from file
+    void readFile(std::string path);
+
+    //Function to handle saving to file
+    void saveFile(std::string path,std::vector<Flashcard>& cards);
+
 private:
     std::vector<Flashcard> flashcards;
 };
