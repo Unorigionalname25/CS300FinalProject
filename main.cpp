@@ -5,6 +5,10 @@
 
 FlashcardSet cardSet;
 
+//! Function to handle creating a deck
+/**!
+ * asks user how many cards and loops through and creates those cards
+*/
 void createDeck(){
     std::string num;
     std::string side1;
@@ -37,7 +41,10 @@ void createDeck(){
         cardSet.addCard(temp);
     }
 }
-
+//! function to handle review feature
+/**!
+ * loops through cards in set and show their info based off user input
+*/
 void reviewCards(){
     std::vector<Flashcard> cards = cardSet.getFlashcards();
     int i = 0;
@@ -70,7 +77,10 @@ void reviewCards(){
     }
     
 }
-
+//! Function to handle the test feature
+/**!
+ * Loops through cards by using their attributes and then quizes the user
+*/
 void test(){
     std::vector<Flashcard> cards = cardSet.getFlashcards();
     std::string in;
@@ -152,7 +162,10 @@ void test(){
         std::cout << "Correct!" << std::endl;
     }
 }
-
+//! Function to handle main
+/**
+ * Handles state of program
+*/
 void useMain(){
     int state = 0;
     std::string input;
@@ -203,22 +216,6 @@ void useMain(){
 
 
 int main() {
-<<<<<<< HEAD
-    // Example usage
-    Flashcard card1("What is the capital of France?", "Paris", true, false, false, false);
-    Flashcard card2("2 + 2", "4", true, true, false, false);
-    Flashcard card3("Is the sky blue?", "Yes", false, false, true, false);
-    Flashcard card4("The sun rises in the east.", "True", false, false, true, false);
-    Flashcard card5("The capital of Japan is Beijing.", "False", false, false, true, false);
-
-    FlashcardSet cardSet;
-    cardSet.addCard(card1);
-    cardSet.addCard(card2);
-    cardSet.addCard(card3);
-    cardSet.addCard(card4);
-    cardSet.addCard(card5);
-
-=======
     // // Example usage
     // Flashcard card1("What is the capital of France?", "Paris", true, false, false, false);
     // Flashcard card2("2 + 2", "4", true, true, false, false);
@@ -227,7 +224,6 @@ int main() {
     // cardSet.addCard(card1);
     // cardSet.addCard(card2);
     // cardSet.addCard(card3);
->>>>>>> 2b7c0ab470a99353b1d738eed7da78093accf18e
 
     // // Accessing flashcards in the set
     // const std::vector<Flashcard>& flashcards = cardSet.getFlashcards();
