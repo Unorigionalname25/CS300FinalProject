@@ -6,11 +6,16 @@ int main() {
     Flashcard card1("What is the capital of France?", "Paris", true, false, false, false);
     Flashcard card2("2 + 2", "4", true, true, false, false);
     Flashcard card3("Is the sky blue?", "Yes", false, false, true, false);
+    Flashcard card4("The sun rises in the east.", "True", false, false, true, false);
+    Flashcard card5("The capital of Japan is Beijing.", "False", false, false, true, false);
 
     FlashcardSet cardSet;
     cardSet.addCard(card1);
     cardSet.addCard(card2);
     cardSet.addCard(card3);
+    cardSet.addCard(card4);
+    cardSet.addCard(card5);
+
 
     // Accessing flashcards in the set
     const std::vector<Flashcard>& flashcards = cardSet.getFlashcards();

@@ -1,39 +1,59 @@
-Start testing: Dec 01 07:09 UTC
+Start testing: Dec 04 17:46 UTC
 ----------------------------------------------------------
 1/1 Testing: testing
 1/1 Test: testing
 Command: "/workspaces/CS300FinalProject/build/testing"
 Directory: /workspaces/CS300FinalProject/build
-"testing" start time: Dec 01 07:09 UTC
+"testing" start time: Dec 04 17:46 UTC
 Output:
 ----------------------------------------------------------
-[==========] Running 5 tests from 2 test suites.
+[==========] Running 15 tests from 2 test suites.
 [----------] Global test environment set-up.
-[----------] 3 tests from FlashcardTest
+[----------] 9 tests from FlashcardTest
 [ RUN      ] FlashcardTest.CorrectAnswer
 [       OK ] FlashcardTest.CorrectAnswer (0 ms)
 [ RUN      ] FlashcardTest.IsFreeResponse
 [       OK ] FlashcardTest.IsFreeResponse (0 ms)
 [ RUN      ] FlashcardTest.IsMultipleChoice
 [       OK ] FlashcardTest.IsMultipleChoice (0 ms)
-[----------] 3 tests from FlashcardTest (0 ms total)
+[ RUN      ] FlashcardTest.IncorrectAnswer
+[       OK ] FlashcardTest.IncorrectAnswer (0 ms)
+[ RUN      ] FlashcardTest.IncorrectAnswerNumbers
+[       OK ] FlashcardTest.IncorrectAnswerNumbers (0 ms)
+[ RUN      ] FlashcardTest.IncorrectAnswerDifferentCountry
+[       OK ] FlashcardTest.IncorrectAnswerDifferentCountry (0 ms)
+[ RUN      ] FlashcardTest.TrueFalseCorrectAnswer
+[       OK ] FlashcardTest.TrueFalseCorrectAnswer (0 ms)
+[ RUN      ] FlashcardTest.TrueFalseIncorrectAnswer
+[       OK ] FlashcardTest.TrueFalseIncorrectAnswer (0 ms)
+[ RUN      ] FlashcardTest.MatchingQuestion
+[       OK ] FlashcardTest.MatchingQuestion (0 ms)
+[----------] 9 tests from FlashcardTest (0 ms total)
 
-[----------] 2 tests from FlashcardSetTest
+[----------] 6 tests from FlashcardSetTest
 [ RUN      ] FlashcardSetTest.AddCard
 [       OK ] FlashcardSetTest.AddCard (0 ms)
 [ RUN      ] FlashcardSetTest.GetFlashcards
 [       OK ] FlashcardSetTest.GetFlashcards (0 ms)
-[----------] 2 tests from FlashcardSetTest (0 ms total)
+[ RUN      ] FlashcardSetTest.EmptySet
+[       OK ] FlashcardSetTest.EmptySet (0 ms)
+[ RUN      ] FlashcardSetTest.MultipleChoiceCards
+[       OK ] FlashcardSetTest.MultipleChoiceCards (0 ms)
+[ RUN      ] FlashcardSetTest.MixedQuestionTypes
+[       OK ] FlashcardSetTest.MixedQuestionTypes (0 ms)
+[ RUN      ] FlashcardSetTest.LargeNumberOfFlashcards
+[       OK ] FlashcardSetTest.LargeNumberOfFlashcards (0 ms)
+[----------] 6 tests from FlashcardSetTest (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 5 tests from 2 test suites ran. (0 ms total)
-[  PASSED  ] 5 tests.
+[==========] 15 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 15 tests.
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"testing" end time: Dec 01 07:09 UTC
+"testing" end time: Dec 04 17:46 UTC
 "testing" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 01 07:09 UTC
+End testing: Dec 04 17:46 UTC
